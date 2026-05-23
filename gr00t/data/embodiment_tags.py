@@ -122,6 +122,11 @@ class EmbodimentTag(Enum):
     The LIBERO Panda robot (used for LIBERO-Goal, LIBERO-Object, LIBERO-Spatial, LIBERO-10).
     """
 
+    UNITREE_G1_SONIC_DEX1 = "unitree_g1_sonic_dex1"
+    """
+    The Unitree G1 robot with SONIC whole-body controller and Dex1-1 parallel grippers.
+    """
+
     # New embodiment during post-training
     NEW_EMBODIMENT = "new_embodiment"
     """
@@ -202,6 +207,7 @@ POSTTRAIN_TAGS: frozenset[EmbodimentTag] = frozenset(
 
 FINETUNE_ONLY_TAGS: frozenset[EmbodimentTag] = frozenset(
     {
+        EmbodimentTag.UNITREE_G1_SONIC_DEX1,
         EmbodimentTag.NEW_EMBODIMENT,
     }
 )
