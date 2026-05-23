@@ -64,6 +64,50 @@ MODALITY_CONFIGS = {
         ),
     },
     ##### Pre-registered posttrain configurations #####
+    "unitree_g1_sonic_dex1": {
+        "video": ModalityConfig(
+            delta_indices=[0],
+            modality_keys=["ego_view"],
+        ),
+        "state": ModalityConfig(
+            delta_indices=[0],
+            modality_keys=[
+                "left_leg",
+                "right_leg",
+                "waist",
+                "left_arm",
+                "right_arm",
+                "left_gripper_state",
+                "right_gripper_state",
+                "projected_gravity",
+            ],
+        ),
+        "action": ModalityConfig(
+            delta_indices=list(range(40)),
+            modality_keys=["motion_token", "left_gripper_cmd", "right_gripper_cmd"],
+            action_configs=[
+                ActionConfig(
+                    rep=ActionRepresentation.ABSOLUTE,
+                    type=ActionType.NON_EEF,
+                    format=ActionFormat.DEFAULT,
+                ),
+                ActionConfig(
+                    rep=ActionRepresentation.ABSOLUTE,
+                    type=ActionType.NON_EEF,
+                    format=ActionFormat.DEFAULT,
+                ),
+                ActionConfig(
+                    rep=ActionRepresentation.ABSOLUTE,
+                    type=ActionType.NON_EEF,
+                    format=ActionFormat.DEFAULT,
+                ),
+            ],
+        ),
+        "language": ModalityConfig(
+            delta_indices=[0],
+            modality_keys=["annotation.human.task_description"],
+        ),
+    },
     "unitree_g1_sonic": {
         "video": ModalityConfig(
             delta_indices=[0],
