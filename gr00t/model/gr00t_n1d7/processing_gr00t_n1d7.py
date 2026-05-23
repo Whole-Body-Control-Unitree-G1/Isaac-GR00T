@@ -69,6 +69,7 @@ EMBODIMENT_TAG_TO_PROJECTOR_INDEX = {
     "simpler_env_google": 0,
     "simpler_env_widowx": 1,
     "libero_sim": 2,
+    "unitree_g1_sonic_dex1": 10,
     "new_embodiment": 10,
 }
 

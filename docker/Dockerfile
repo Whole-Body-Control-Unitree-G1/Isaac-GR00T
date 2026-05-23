@@ -23,11 +23,12 @@ ENV DEBIAN_FRONTEND=noninteractive \
     LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}
 
 # System dependencies
-RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
-    --mount=type=cache,target=/var/lib/apt,sharing=locked <<EOF
+RUN <<EOF
 set -e
+echo 'Acquire::AllowInsecureRepositories "true";' > /etc/apt/apt.conf.d/99insecure
+echo 'APT::Get::AllowUnauthenticated "true";' >> /etc/apt/apt.conf.d/99insecure
 apt-get update
-apt-get install -y --no-install-recommends \
+apt-get install -y --no-install-recommends --allow-unauthenticated \
     build-essential \
     git \
     git-lfs \
