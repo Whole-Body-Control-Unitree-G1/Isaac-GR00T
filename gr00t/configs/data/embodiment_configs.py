@@ -80,12 +80,18 @@ MODALITY_CONFIGS = {
                 "left_gripper_state",
                 "right_gripper_state",
                 "projected_gravity",
+                "head_state",
             ],
         ),
         "action": ModalityConfig(
             delta_indices=list(range(40)),
-            modality_keys=["motion_token", "left_gripper_cmd", "right_gripper_cmd"],
+            modality_keys=["motion_token", "left_gripper_cmd", "right_gripper_cmd", "head_cmd"],
             action_configs=[
+                ActionConfig(
+                    rep=ActionRepresentation.ABSOLUTE,
+                    type=ActionType.NON_EEF,
+                    format=ActionFormat.DEFAULT,
+                ),
                 ActionConfig(
                     rep=ActionRepresentation.ABSOLUTE,
                     type=ActionType.NON_EEF,
