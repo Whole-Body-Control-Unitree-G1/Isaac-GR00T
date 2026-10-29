@@ -127,6 +127,11 @@ class EmbodimentTag(Enum):
     The Unitree G1 robot with SONIC whole-body controller and Dex1-1 parallel grippers.
     """
 
+    UNITREE_G1_SONIC_DEX1_3CAM = "unitree_g1_sonic_dex1_3cam"
+    """
+    UNITREE_G1_SONIC_DEX1 with the two D405 wrist cameras added (ego_view, left_wrist, right_wrist).
+    """
+
     # New embodiment during post-training
     NEW_EMBODIMENT = "new_embodiment"
     """
@@ -208,6 +213,7 @@ POSTTRAIN_TAGS: frozenset[EmbodimentTag] = frozenset(
 FINETUNE_ONLY_TAGS: frozenset[EmbodimentTag] = frozenset(
     {
         EmbodimentTag.UNITREE_G1_SONIC_DEX1,
+        EmbodimentTag.UNITREE_G1_SONIC_DEX1_3CAM,
         EmbodimentTag.NEW_EMBODIMENT,
     }
 )
