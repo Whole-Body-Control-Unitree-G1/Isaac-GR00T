@@ -134,7 +134,7 @@ MODALITY_CONFIGS = {
             ],
         ),
         "action": ModalityConfig(
-            delta_indices=list(range(40)),
+            delta_indices=list(range(50)),
             modality_keys=["motion_token", "left_gripper_cmd", "right_gripper_cmd", "head_cmd"],
             action_configs=[
                 ActionConfig(

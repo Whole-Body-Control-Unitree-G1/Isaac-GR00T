@@ -62,6 +62,9 @@ class FinetuneConfig:
     Dropout probability applied to state inputs for regularization during training.
     """
 
+    action_horizon: int = 40
+    """Action chunk length predicted by the model. Must cover the embodiment's action delta_indices."""
+
     # --- Data Augmentation ---
     random_rotation_angle: int | None = None
     """Maximum rotation angle (in degrees) for random rotation augmentation of input images."""
